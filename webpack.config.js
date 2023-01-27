@@ -20,18 +20,19 @@ const getStyleLoaders = (importLoaders) => [
   {
     loader: 'postcss-loader',
     options: {
-      ident: 'postcss',
-      plugins: [
-        PostcssFlexbugsFixes(),
-        PostcssPresetEnv({
-          autoprefixer: {
-            grid: true,
-            flexbox: 'no-2009',
-          },
-          stage: 3,
-        }),
-        PostcssNormalize(),
-      ],
+      postcssOptions: {
+        plugins: [
+          PostcssFlexbugsFixes(),
+          PostcssPresetEnv({
+            autoprefixer: {
+              grid: true,
+              flexbox: 'no-2009',
+            },
+            stage: 3,
+          }),
+          PostcssNormalize(),
+        ],
+      },
       sourceMap: isDev,
     },
   },
@@ -63,7 +64,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(tsx?|js)$/,
+        test: /\.(tsx?|jsx?)$/,
         loader: 'babel-loader',
         options: { cacheDirectory: true },
         exclude: /node_modules/,
@@ -103,7 +104,14 @@ module.exports = {
     ],
   },
   optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
+    minimize: !isDev,
+    minimizer: [new TerserPlugin({
+      terserOptions: {
+        sourceMap: true,
+      },
+    })],
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.ts', '.tsx', 'json'],
   },
 }
