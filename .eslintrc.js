@@ -21,6 +21,17 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react'],
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [['@components', './src/components']],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
   rules: {
     semi: 0,
     'react/function-component-definition': [
@@ -32,5 +43,6 @@ module.exports = {
     ],
     'react/jsx-filename-extension': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'import/extensions': 'off',
   },
 }

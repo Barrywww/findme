@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const PostcssFlexbugsFixes = require('postcss-flexbugs-fixes')
 const PostcssPresetEnv = require('postcss-preset-env')
 const PostcssNormalize = require('postcss-normalize')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 
 const isDev = process.env.NODE_ENV !== 'production'
@@ -60,6 +61,12 @@ module.exports = {
       minify: !isDev,
       cache: false,
     }),
+    new CopyWebpackPlugin({
+      patterns: {
+        from: path.resolve(__dirname, 'public'),
+        to: path.resolve(__dirname, 'dist'),
+      },
+    }),
   ],
   module: {
     rules: [
@@ -105,13 +112,20 @@ module.exports = {
   },
   optimization: {
     minimize: !isDev,
-    minimizer: [new TerserPlugin({
-      terserOptions: {
-        sourceMap: true,
-      },
-    })],
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          sourceMap: true,
+        },
+      }),
+    ],
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.ts', '.tsx', 'json'],
+    alias: {
+      '@screens': path.resolve(__dirname, 'src/screens'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
+    },
+    extensions: ['.js', '.jsx', '.ts', '.tsx', 'json'],
   },
 }

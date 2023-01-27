@@ -1,7 +1,7 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 
-import Com from './Com'
+import Com from '@components/Com'
 
 const App = () => {
   const [nbr, setNbr] = React.useState<number>(0)
