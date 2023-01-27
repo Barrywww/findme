@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const PostcssFlexbugsFixes = require('postcss-flexbugs-fixes')
 const PostcssPresetEnv = require('postcss-preset-env')
 const PostcssNormalize = require('postcss-normalize')
+const TerserPlugin = require('terser-webpack-plugin')
 
 const isDev = process.env.NODE_ENV !== 'production'
 
@@ -49,7 +50,7 @@ module.exports = {
     hot: true,
     compress: true,
   },
-  devtool: isDev ? 'eval-source-map' : '',
+  devtool: isDev ? 'inline-source-map' : '',
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -100,5 +101,9 @@ module.exports = {
         type: 'asset/resource',
       },
     ],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
   },
 }
