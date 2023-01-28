@@ -62,10 +62,13 @@ module.exports = {
       cache: false,
     }),
     new CopyWebpackPlugin({
-      patterns: {
-        from: path.resolve(__dirname, 'public'),
-        to: path.resolve(__dirname, 'dist'),
-      },
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'public'),
+          to: path.resolve(__dirname, 'dist'),
+          noErrorOnMissing: true,
+        },
+      ],
     }),
   ],
   module: {
