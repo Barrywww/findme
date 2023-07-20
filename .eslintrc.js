@@ -44,5 +44,6 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'import/no-extraneous-dependencies': 'off',
     'import/extensions': 'off',
+    'jsx-quotes': [2, 'prefer-single'],
   },
 }
