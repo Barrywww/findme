@@ -23,6 +23,7 @@ module.exports = {
   plugins: ['react'],
   settings: {
     'import/resolver': {
+      typescript: {},
       alias: {
         map: [['@components', './src/components']],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -43,6 +44,7 @@ module.exports = {
     ],
     'react/jsx-filename-extension': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'import/prefer-default-export': 'off',
     'import/extensions': 'off',
     'jsx-quotes': [2, 'prefer-single'],
   },
