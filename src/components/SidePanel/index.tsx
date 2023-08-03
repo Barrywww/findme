@@ -2,6 +2,8 @@ import React from 'react'
 import { Card, List, Avatar } from 'antd'
 
 import './index.less'
+import { useAppSelector } from '@hooks/redux'
+import { userInfoState } from '@slices/userInfoSlice'
 
 const data = [
   {
@@ -19,11 +21,14 @@ const data = [
 ]
 
 const SidePanel: React.FC = () => {
-  const userInfo = {}
+  const userInfo:userInfoState = useAppSelector((state) => state.userInfo)
+
   return (
     <div id='findme-sidepanel-wrapper'>
       <div className='avatar-wrapper'>
-        <Avatar size={40} style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>U</Avatar>
+        <Avatar size={40} style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>
+          {userInfo.username?.[0] ?? ''}
+        </Avatar>
       </div>
       <Card title='People & Devices'>
         <List
