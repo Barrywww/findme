@@ -2,8 +2,8 @@ type LocationUnit = {
   unitType: 'device' | 'people';
   unitId: string;
   unitName: string;
-  friendlyName: string;
-  lastSeen: Date;
+  friendlyName?: string;
+  lastSeen: string;
   lng: number;
   lat: number;
 }
