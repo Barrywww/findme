@@ -1,7 +1,7 @@
 {
-  "name": "better-spotify",
-  "version": "1.0.0",
-  "description": "A personalized spotify web app.",
+  "name": "findme",
+  "version": "0.0.1",
+  "description": "A self-hosted webapp that displays location of devices/people.",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config webpack.config.js",
