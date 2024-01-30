@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
-import { createSlice } from '@reduxjs/toolkit'
+import { LocationUnit } from '@/types/LocationUnit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { LocationUnit } from '@localtypes/LocationUnit'
+import { createSlice } from '@reduxjs/toolkit'
 
 export interface userInfoState {
   username: string | null
@@ -31,5 +31,6 @@ export const userInfoSlice = createSlice({
   },
 })
 
-export const { setUsername, setUserId, setLocationUnits } = userInfoSlice.actions
+export const { setUsername, setUserId, setLocationUnits } =
+  userInfoSlice.actions
 export default userInfoSlice.reducer

@@ -1,23 +1,21 @@
 {
-  "name": "better-spotify",
-  "version": "1.0.0",
-  "description": "A personalized spotify web app.",
+  "name": "findme",
+  "version": "0.0.1",
+  "description": "A self-hosted webapp that displays location of devices/people.",
+  "license": "ISC",
+  "author": "Barrywww",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack serve --config webpack.config.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "build": "max build",
+    "dev": "max dev",
+    "format": "prettier --cache --write .",
+    "postinstall": "max setup",
     "lint": "eslint -c .eslintrc.js --ext .ts,.tsx,.js src",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "setup": "max setup",
+    "start": "npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Barrywww",
-  "license": "ISC",
-  "browserslist": [
-    "> 1%",
-    "not dead",
-    "ie >= 9",
-    "not op_mini all"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -28,12 +26,29 @@
       "eslint --config .eslintrc.js"
     ]
   },
+  "browserslist": [
+    "> 1%",
+    "not dead",
+    "ie >= 9",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "@ant-design/icons": "^5.2.6",
+    "@ant-design/pro-components": "^2.6.48",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@umijs/max": "^4.1.1",
+    "antd": "^5.13.3",
+    "bingmaps-react": "^1.2.10",
+    "core-js": "^3.31.1",
+    "dayjs": "^1.11.9",
+    "react-redux": "^8.1.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "babel-loader": "^9.1.2",
     "babel-plugin-module-resolver": "^5.0.0",
@@ -50,30 +65,21 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.1",
     "html-webpack-plugin": "^5.5.0",
-    "husky": "^8.0.0",
+    "husky": "^9.0.6",
     "less-loader": "^11.1.0",
-    "lint-staged": "^13.1.0",
+    "lint-staged": "^15.2.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^7.0.2",
     "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^8.0.0",
-    "prettier": "^2.8.3",
+    "prettier": "^3.2.4",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "prettier-plugin-packagejson": "^2.4.9",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.6",
-    "typescript": "^4.9.4",
-    "webpack": "^5.75.0",
+    "typescript": "^5.3.3",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
-  },
-  "dependencies": {
-    "@reduxjs/toolkit": "^1.9.5",
-    "antd": "^5.8.1",
-    "bingmaps-react": "^1.2.10",
-    "core-js": "^3.31.1",
-    "dayjs": "^1.11.9",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-redux": "^8.1.2"
   }
 }
