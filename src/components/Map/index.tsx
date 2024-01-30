@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
 import BingMapsReact from 'bingmaps-react'
+import React, { useEffect, useState } from 'react'
 
-import { useAppSelector } from '@hooks/redux'
+import { useAppSelector } from '@/hooks/redux'
 
+import { LocationUnit } from '@/types/LocationUnit'
 import './index.less'
 
 interface IFindMeMapProps {
@@ -20,18 +21,18 @@ interface IMapViewOptions {
 
 interface IMapPushpins {
   center: {
-    latitude: number,
-    longitude: number,
-  },
+    latitude: number
+    longitude: number
+  }
   options: {
-    title: string,
+    title: string
   }
 }
 
 const FindMeMap: React.FC<IFindMeMapProps> = (props) => {
   const { apiKey, lat, lng } = props
   const [mapPushpins, setMapPushpins] = useState<IMapPushpins[]>([])
-  const [viewOptions, setViewOptions] = useState<IMapViewOptions>({
+  const [viewOptions] = useState<IMapViewOptions>({
     center: {
       longitude: lng,
       latitude: lat,
@@ -42,7 +43,7 @@ const FindMeMap: React.FC<IFindMeMapProps> = (props) => {
 
   useEffect(() => {
     if (locationUnits?.length > 0) {
-      const newPushpins = locationUnits.map((lu) => ({
+      const newPushpins = locationUnits.map((lu: LocationUnit) => ({
         center: {
           latitude: lu.lat,
           longitude: lu.lng,
@@ -56,7 +57,7 @@ const FindMeMap: React.FC<IFindMeMapProps> = (props) => {
   }, [locationUnits])
 
   return (
-    <div id='findme-map-wrapper'>
+    <div id="findme-map-wrapper">
       <BingMapsReact
         bingMapsKey={apiKey}
         pushPins={mapPushpins}
