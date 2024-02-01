@@ -12,7 +12,7 @@ export async function getRoutes() {
 '2': React.lazy(() => import(/* webpackChunkName: "p__Home__index" */'@/pages/Home/index.tsx')),
 '3': React.lazy(() => import(/* webpackChunkName: "p__Access__index" */'@/pages/Access/index.tsx')),
 '4': React.lazy(() => import(/* webpackChunkName: "p__Table__index" */'@/pages/Table/index.tsx')),
-'ant-design-pro-layout': React.lazy(() => import(/* webpackChunkName: "t__plugin-layout__Layout" */'/Users/barrywang/Projects/findme/src/.umi-production/plugin-layout/Layout.tsx')),
+'ant-design-pro-layout': React.lazy(() => import(/* webpackChunkName: "t__plugin-layout__Layout" */'/Users/barrywang/Projects/findme/packages/webapp/src/.umi-production/plugin-layout/Layout.tsx')),
 },
   };
 }
