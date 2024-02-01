@@ -1,5 +1,7 @@
 import { defineConfig } from '@umijs/max'
 
+const path = require('path')
+
 export default defineConfig({
   antd: {},
   access: {},
@@ -33,4 +35,7 @@ export default defineConfig({
     },
   ],
   npmClient: 'pnpm',
+  alias: {
+    '@p': path.resolve(__dirname, '../')
+  },
 })

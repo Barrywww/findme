@@ -1,4 +1,4 @@
-import userInfoReducer from '@common/slices/userInfoSlice'
+import userInfoReducer from '@p/common/slices/userInfoSlice'
 import { configureStore } from '@reduxjs/toolkit'
 
 export const store = configureStore({

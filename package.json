@@ -16,7 +16,7 @@
     "webapp:start": "pnpm --filter webapp run start",
     "prepare": "husky",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "pnpm --filter webapp run build",
+    "build": "pnpm run webapp:build",
     "lint": "pnpm run webapp:lint"
   },
   "husky": {

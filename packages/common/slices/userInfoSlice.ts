@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { LocationUnit } from '@/types/LocationUnit'
+import { LocationUnit } from '@p/common/types/LocationUnit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
 
