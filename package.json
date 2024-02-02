@@ -6,6 +6,7 @@
   "author": "Barrywww",
   "main": "index.js",
   "scripts": {
+    "ios:dev": "pnpm --filter native run ios",
     "webapp:build": "pnpm --filter webapp run build",
     "webapp:dev": "pnpm --filter webapp run dev",
     "webapp:format": "pnpm --filter run format",

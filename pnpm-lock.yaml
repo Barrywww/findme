@@ -50,6 +50,12 @@ importers:
 
   packages/native:
     dependencies:
+      '@react-native-community/cli-platform-android':
+        specifier: ^12.3.4
+        version: 12.3.4
+      '@react-native-community/cli-platform-ios':
+        specifier: ^12.3.4
+        version: 12.3.4
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -3966,10 +3972,36 @@ packages:
       - encoding
     dev: false
 
+  /@react-native-community/cli-platform-android@12.3.4:
+    resolution: {integrity: sha512-3Bdw2oOv8dOJCV8PK6DUQAXQt8aOQA0DX1xM9Q8CPPyDF7Yb5JM5Ls42mYx6egfWZeErCdJ+HWhZz2c1lerKsQ==}
+    dependencies:
+      '@react-native-community/cli-tools': 12.3.4
+      chalk: 4.1.2
+      execa: 5.1.1
+      fast-xml-parser: 4.3.4
+      glob: 7.2.3
+      logkitty: 0.7.1
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
   /@react-native-community/cli-platform-ios@12.3.2:
     resolution: {integrity: sha512-OcWEAbkev1IL6SUiQnM6DQdsvfsKZhRZtoBNSj9MfdmwotVZSOEZJ+IjZ1FR9ChvMWayO9ns/o8LgoQxr1ZXeg==}
     dependencies:
       '@react-native-community/cli-tools': 12.3.2
+      chalk: 4.1.2
+      execa: 5.1.1
+      fast-xml-parser: 4.3.4
+      glob: 7.2.3
+      ora: 5.4.1
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
+  /@react-native-community/cli-platform-ios@12.3.4:
+    resolution: {integrity: sha512-+nH3QGt1pYIkKppKl18mzC1oXtkGvgGS1K3ubRDxhoC/XKN9yqUeJQSpcMH3Jtx724/4I4HAxqJIayt3enKMew==}
+    dependencies:
+      '@react-native-community/cli-tools': 12.3.4
       chalk: 4.1.2
       execa: 5.1.1
       fast-xml-parser: 4.3.4
@@ -4004,6 +4036,23 @@ packages:
 
   /@react-native-community/cli-tools@12.3.2:
     resolution: {integrity: sha512-nDH7vuEicHI2TI0jac/DjT3fr977iWXRdgVAqPZFFczlbs7A8GQvEdGnZ1G8dqRUmg+kptw0e4hwczAOG89JzQ==}
+    dependencies:
+      appdirsjs: 1.2.7
+      chalk: 4.1.2
+      find-up: 5.0.0
+      mime: 2.6.0
+      node-fetch: 2.7.0
+      open: 6.4.0
+      ora: 5.4.1
+      semver: 7.5.4
+      shell-quote: 1.8.1
+      sudo-prompt: 9.2.1
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
+  /@react-native-community/cli-tools@12.3.4:
+    resolution: {integrity: sha512-65s30DDzzewDhqk46gRXtWLeSzxjPiBWEFY/ttzQPEh2udCoLwKUMjE9iEBWjdF4PBwp4LLb5EygCfJ9cVmraQ==}
     dependencies:
       appdirsjs: 1.2.7
       chalk: 4.1.2
