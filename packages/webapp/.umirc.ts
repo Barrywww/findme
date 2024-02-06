@@ -13,8 +13,9 @@ export default defineConfig({
   },
   routes: [
     {
+      name: '介绍页',
       path: '/',
-      redirect: '/home',
+      component: './Intro',
       layout: false,
     },
     {
@@ -36,6 +37,7 @@ export default defineConfig({
   ],
   npmClient: 'pnpm',
   alias: {
-    '@p': path.resolve(__dirname, '../')
+    '@p': path.resolve(__dirname, '../'),
   },
+  tailwindcss: {},
 })

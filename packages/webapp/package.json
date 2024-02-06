@@ -30,6 +30,8 @@
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
     "@ant-design/pro-components": "^2.6.48",
+    "@headlessui/react": "^1.7.18",
+    "@heroicons/react": "^2.1.1",
     "@packages/common": "workspace:^",
     "@reduxjs/toolkit": "^1.9.5",
     "antd": "^5.13.3",
@@ -73,6 +75,7 @@
     "prettier-plugin-packagejson": "^2.4.9",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
+    "tailwindcss": "^3",
     "terser-webpack-plugin": "^5.3.6",
     "typescript": "^5.3.3",
     "webpack-cli": "^5.0.1",

@@ -8,7 +8,7 @@ import { getRoutes } from './core/route';
 import { createPluginManager } from './core/plugin';
 import { createHistory } from './core/history';
 import { ApplyPluginsType } from 'umi';
-
+import '/Users/barrywang/Projects/findme/packages/webapp/src/.umi/plugin-tailwindcss/tailwind.css';
 
 const publicPath = "/";
 const runtimePublicPath = false;
