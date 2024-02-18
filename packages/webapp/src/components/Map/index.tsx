@@ -2,7 +2,7 @@ import BingMapsReact from 'bingmaps-react'
 import React, { useEffect, useState } from 'react'
 
 import { useAppSelector } from '@packages/common/hooks/redux'
-import { LocationUnit } from '@packages/common/types/LocationUnit'
+import { Device } from '@packages/common/types/LocationUnit'
 import './index.less'
 
 interface IFindMeMapProps {
@@ -38,22 +38,22 @@ const FindMeMap: React.FC<IFindMeMapProps> = (props) => {
     },
   })
 
-  const locationUnits = useAppSelector((state) => state.userInfo.locationUnits)
+  const devices = useAppSelector((state) => state.userInfo.devices)
 
   useEffect(() => {
-    if (locationUnits?.length > 0) {
-      const newPushpins = locationUnits.map((lu: LocationUnit) => ({
+    if (devices?.length > 0) {
+      const newPushpins = devices.map((d: Device) => ({
         center: {
-          latitude: lu.lat,
-          longitude: lu.lng,
+          latitude: d.lat,
+          longitude: d.lng,
         },
         options: {
-          title: lu.unitName,
+          title: d.unitName,
         },
       }))
       setMapPushpins(newPushpins)
     }
-  }, [locationUnits])
+  }, [devices])
 
   return (
     <div id="findme-map-wrapper">

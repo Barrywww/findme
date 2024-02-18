@@ -2,7 +2,7 @@ import { Avatar, Card, List } from 'antd'
 import React from 'react'
 
 import { useAppSelector } from '@packages/common/hooks/redux'
-import { userInfoState } from '@packages/common/slices/userInfoSlice'
+import { IUserInfoState } from '@packages/common/slices/userInfoSlice'
 import './index.less'
 
 const data = [
@@ -21,7 +21,7 @@ const data = [
 ]
 
 const SidePanel: React.FC = () => {
-  const userInfo: userInfoState = useAppSelector((state) => state.userInfo)
+  const userInfo: IUserInfoState = useAppSelector((state) => state.userInfo)
 
   return (
     <div id="findme-sidepanel-wrapper">

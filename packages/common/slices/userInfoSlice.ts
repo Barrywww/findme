@@ -1,18 +1,20 @@
 /* eslint-disable no-param-reassign */
-import { LocationUnit } from '@p/common/types/LocationUnit'
+import { Device, LocationUnit, People } from '@p/common/types/LocationUnit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
 
-export interface userInfoState {
+export interface IUserInfoState {
   username: string | null
   userId: string | null
-  locationUnits: Array<LocationUnit>
+  people: Array<People>
+  devices: Array<Device>
 }
 
-const initialState: userInfoState = {
+const initialState: IUserInfoState = {
   username: null,
   userId: null,
-  locationUnits: [],
+  people: [],
+  devices: [],
 }
 
 export const userInfoSlice = createSlice({
@@ -25,12 +27,15 @@ export const userInfoSlice = createSlice({
     setUserId: (state, action: PayloadAction<string>) => {
       state.userId = action.payload
     },
-    setLocationUnits: (state, action: PayloadAction<Array<LocationUnit>>) => {
-      state.locationUnits = action.payload
+    setDevices: (state, action: PayloadAction<Array<Device>>) => {
+      state.devices = action.payload
+    },
+    setPeople: (state, action: PayloadAction<Array<People>>) => {
+      state.people = action.payload
     },
   },
 })
 
-export const { setUsername, setUserId, setLocationUnits } =
+export const { setUsername, setUserId, setDevices, setPeople } =
   userInfoSlice.actions
 export default userInfoSlice.reducer

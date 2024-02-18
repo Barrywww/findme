@@ -4,15 +4,16 @@ import FindMeMap from '@/components/Map'
 import SidePanel from '@/components/SidePanel'
 
 import { useAppDispatch } from '@packages/common/hooks/redux'
-import { setLocationUnits, setUsername } from '@packages/common/slices/userInfoSlice'
+import { setDevices, setUsername } from '@packages/common/slices/userInfoSlice'
 import { store } from '@packages/common/store'
-import { LocationUnit } from '@packages/common/types/LocationUnit'
+import type { Device } from '@packages/common/types/LocationUnit'
 
 import { Provider } from 'react-redux'
 import './global.less'
 
-const locationUnits: LocationUnit[] = [
+const devices: Array<Device> = [
   {
+    deviceType: 'phone',
     unitType: 'device',
     unitId: 'device-01',
     unitName: 'Barry',
@@ -21,6 +22,7 @@ const locationUnits: LocationUnit[] = [
     lastSeen: new Date('2023-08-08').toISOString(),
   },
   {
+    deviceType: 'phone',
     unitType: 'device',
     unitId: 'device-01',
     unitName: 'Barry',
@@ -36,7 +38,7 @@ const App: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       dispatch(setUsername('Barry Wang'))
-      dispatch(setLocationUnits(locationUnits))
+      dispatch(setDevices(devices))
     }, 3000)
   })
 
