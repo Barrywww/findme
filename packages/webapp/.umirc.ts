@@ -40,4 +40,10 @@ export default defineConfig({
     '@p': path.resolve(__dirname, '../'),
   },
   tailwindcss: {},
+  mfsu: {
+    strategy: 'normal',
+  },
+  monorepoRedirect: {
+    srcDir: ['.', 'src']
+  }
 })

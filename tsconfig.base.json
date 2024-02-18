@@ -15,15 +15,14 @@
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "sourceMap": true,
-    "baseUrl": ".",
+    // "baseUrl": ".",
     "strict": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
   },
   "include": [
-    "../../.umirc.ts",
-    "../../**/*.d.ts",
-    "../../**/*.ts",
-    "../../**/*.tsx"
+    "**/*.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
   ]
 }

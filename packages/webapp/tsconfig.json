@@ -3,19 +3,19 @@
   "compilerOptions": {
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ],
       "@p/*": [
         "../*"
       ],
       "@@/*": [
-        "src/.umi/*"
+        "./src/.umi/*"
       ],
       "@umijs/max": [
         "/Users/barrywang/Projects/findme/node_modules/.pnpm/umi@4.1.1_@babel+core@7.23.9_@types+react@18.2.48_eslint@8.35.0_prettier@3.2.4_react-dom@18.2_ujut26qm4vrpyaujhbvbkg2nyu/node_modules/umi"
       ],
       "@umijs/max/typings": [
-        "src/.umi/typings"
+        "./src/.umi/typings"
       ]
     }
   }
