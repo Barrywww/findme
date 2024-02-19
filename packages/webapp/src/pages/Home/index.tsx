@@ -40,7 +40,7 @@ const App: React.FC = () => {
       dispatch(setUsername('Barry Wang'))
       dispatch(setDevices(devices))
     }, 3000)
-  })
+  }, [])
 
   return (
     <div id="findme-root">

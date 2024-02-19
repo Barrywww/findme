@@ -4,6 +4,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/*": [
+        "./*"
+      ],
       "@p/*": [
         "../*"
       ],
