@@ -9,6 +9,7 @@ import { store } from '@packages/common/store'
 import type { Device } from '@packages/common/types/LocationUnit'
 
 import { Provider } from 'react-redux'
+import { ConfigProvider, theme } from 'antd'
 import './global.less'
 
 const devices: Array<Device> = [
@@ -57,7 +58,9 @@ const App: React.FC = () => {
 const HomePageWithStore: React.FC = () => {
   return (
     <Provider store={store}>
-      <App />
+      <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>
+        <App />
+      </ConfigProvider>
     </Provider>
   )
 }
