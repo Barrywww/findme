@@ -1,18 +1,16 @@
-import { IFindMeMapData } from '@/types/IFindMeMap'
+import { IFindMeMapData, IMapPushpins, IMapViewOptions } from '@/types/IFindMeMap'
 import { useState, useEffect } from 'react'
 import { useAppSelector } from './redux'
 import { Device } from '@/types/LocationUnit'
 
 const useFindMeMap: () => IFindMeMapData = () => {
-  const [mapData, setMapData] = useState<IFindMeMapData>({
-    viewOptions: {
-      center: {
-        latitude: 40.444,
-        longitude: -79.99,
-      },
-    },
-    pushpins: [],
+  const [viewOptions, setViewOptions] = useState<IMapViewOptions>({
+    center: {
+      latitude: 40.444,
+      longitude: -79.99,
+    }
   })
+  const [pushpins, setPushpins] = useState<IMapPushpins[]>([])
 
   const devices = useAppSelector((state) => state.userInfo.devices)
 
@@ -27,14 +25,11 @@ const useFindMeMap: () => IFindMeMapData = () => {
           title: d.unitName,
         },
       }))
-      setMapData({
-        ...mapData,
-        pushpins: newPushpins,
-      })
+      setPushpins(newPushpins)
     }
   }, [devices])
 
-  return mapData
+  return { viewOptions, pushpins }
 }
 
 export { useFindMeMap }
