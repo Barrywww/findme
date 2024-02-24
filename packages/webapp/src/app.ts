@@ -4,8 +4,6 @@
 // 更多信息见文档：https://umijs.org/docs/api/runtime-config#getinitialstate
 import * as Sentry from '@sentry/react'
 
-console.debug(_SENTRY_API)
-
 Sentry.init({
   dsn: _SENTRY_API,
   integrations: [
