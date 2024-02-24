@@ -44,6 +44,9 @@ export default defineConfig({
     strategy: 'normal',
   },
   monorepoRedirect: {
-    srcDir: ['.', 'src']
-  }
+    srcDir: ['.', 'src'],
+  },
+  define: {
+    _SENTRY_API: process.env.SENTRY_API,
+  },
 })

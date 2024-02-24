@@ -34,6 +34,7 @@
     "@heroicons/react": "^2.1.1",
     "@packages/common": "workspace:^",
     "@reduxjs/toolkit": "^1.9.5",
+    "@sentry/react": "^7.102.1",
     "antd": "^5.13.3",
     "bingmaps-react": "^1.2.10",
     "core-js": "^3.31.1",
