@@ -11,7 +11,7 @@ interface LocationUnit {
 interface People extends LocationUnit {
   email: string
   phone: string
-  profilePic: string
+  profilePic?: string
 }
 
 interface Device extends LocationUnit {
